@@ -3,11 +3,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
-df = pd.read_csv("/content/MLOPS/Iris.csv")
+df = pd.read_csv("/content/MLOPS/data/Iris.csv")
 features = ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']
 taget = 'Species'
 
-X_train, X_test, y_train, y_test = train_test_split(df[features],df[taget] , test_size=0.3, shuffle=True)
+X_train, X_test, y_train, y_test = train_test_split(df[features],df[taget] , test_size=0.1, shuffle=True)
 #step-1: initialise the model class
 clf = DecisionTreeClassifier(criterion="entropy") #Information gain as criteria
 #step-2: train the model on training set
